@@ -1,5 +1,6 @@
 //Ibrahim Almalki
 //sept 23, 2021
+//test
 
 public class BuddyInfo {
 
