@@ -2,23 +2,26 @@ import java.util.ArrayList;
 
 public class AddressBook {
 
-    public ArrayList<BuddyInfo> buddyList;
+    public ArrayList<BuddyInfo> myBuddies;
 
-    public AddressBook(ArrayList<BuddyInfo> buddyList) {
-        this.buddyList = buddyList;
+    public AddressBook(ArrayList<BuddyInfo> myBuddies) {
+        this.myBuddies = myBuddies;
     }
 
     public AddressBook() {
-        buddyList = new ArrayList<BuddyInfo>();
+        myBuddies = new ArrayList<BuddyInfo>();
     }
 
 
-    public void addBuddy(BuddyInfo buddy) {
-        buddyList.add(buddy);
+    public void addBuddy(BuddyInfo aBuddy) {
+        if (aBuddy != null) {
+            myBuddies.add(aBuddy);
+        }
     }
-
-    public void removeBuddy(BuddyInfo buddy) {
-        buddyList.remove(buddy);
+    public void removeBuddy(int index) {
+        if (index >= 0 && index < myBuddies.size()){
+            myBuddies.remove(index);
+        }
     }
 
 
@@ -27,7 +30,7 @@ public class AddressBook {
         BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", "613");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(buddy);
+        addressBook.removeBuddy(0);
     }
 
 
